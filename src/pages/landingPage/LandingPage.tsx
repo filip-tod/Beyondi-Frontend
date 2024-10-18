@@ -6,7 +6,6 @@ import {Features} from "./components/features/Features.tsx";
 import {Pricing} from "./components/pricing/Pricing.tsx";
 import {Faq} from "./components/faq/Faq.tsx";
 import {StartTrial} from "./components/startTrial/StartTrial.tsx";
-import {Footer} from "../../components/footer/Footer.tsx";
 
 export const LandingPage = () => {
   return(
@@ -19,7 +18,6 @@ export const LandingPage = () => {
       <Pricing/>
       <Faq/>
       <StartTrial/>
-      <Footer/>
     </>
   );
 }

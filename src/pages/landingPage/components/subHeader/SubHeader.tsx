@@ -5,7 +5,7 @@ import Chart from '../../../../assets/subHeading/bar-chart-2.svg';
 
 export const SubHeader = () => {
 return(
-  <div className={'flex flex-col  bg-gray-50 w-screen  gap-8 py-16 px-5 mb-10'}>
+  <div className={'flex flex-col  bg-gray-50 w-full  gap-8 py-16 px-5 mb-10'}>
     <div className={'flex flex-col gap-2 items-center'}>
       <div className={'bg-primary-50 p-2 rounded-full'}>
       <div className={'bg-primary-100 p-2 rounded-full'}>
