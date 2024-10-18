@@ -1,7 +1,7 @@
 import styles from './Header.module.css';
-import Chart from '../../../assets/heading/ChartGraphMock.png';
-import LinesRight from '../../../assets/heading/LinePatternRight.png';
-import LinesLeft from '../../../assets/heading/LinePatternLeft.png';
+import Chart from '../../../../assets/heading/ChartGraphMock.png';
+import LinesRight from '../../../../assets/heading/LinePatternRight.png';
+import LinesLeft from '../../../../assets/heading/LinePatternLeft.png';
 
 
 export const Header = () => {
