@@ -1,4 +1,5 @@
 import Check from '../../../../assets/pricing/Check.svg';
+import {Divider} from "../../../../components/divider/Divider.tsx";
 
 const subPlan = [
   {
@@ -50,9 +51,9 @@ const features = [
 
 export const Pricing = () => {
   return (
+    <>
+      <Divider/>
     <div className={'px-6'}>
-      <div className={'w-full border-t border-gray-300'} />
-
       <div className={'flex flex-col items-center gap-4 py-16'}>
         <div>
           <p className={'text-primary-700 font-semibold'}>Pricing</p>
@@ -95,7 +96,7 @@ export const Pricing = () => {
               ))}
             </ul>
           </div>
-          <div className={'border-gray-200 border-l border-r border-b mb-5 p-6 rounded-b-3xl shadow-lg'}>
+          <div className={'border-gray-200 border-l border-r border-b mb-14 p-6 rounded-b-3xl shadow-lg'}>
             <button
               className={'font-medium text-base text-white'}
             >
@@ -105,5 +106,7 @@ export const Pricing = () => {
         </div>
       ))}
     </div>
+
+    </>
   );
 };
