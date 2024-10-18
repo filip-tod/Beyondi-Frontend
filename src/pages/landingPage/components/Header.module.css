@@ -1,0 +1,49 @@
+.heading{
+    font-size: 36px;
+    line-height: 44px;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+.headingTwo{
+    font-size: 36px;
+    line-height: 44px;
+    color: #E9D7FE;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.headingP{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    text-align: center;
+    color: #E9D7FE;
+    margin-bottom: 2rem;
+}
+
+.privacyP{
+    color: #EAECF0;
+    font-weight: normal;
+    font-size: 14px;
+    margin-bottom: 1rem;
+}
+
+.ChartImage{
+    position: absolute;
+    top: 36rem;
+    z-index: 2;
+}
+
+.LinesRight{
+    position: absolute;
+    right: 0;
+    top:35rem;
+
+}
+
+.LinesLeft{
+    position: absolute;
+    left: 0;
+    bottom: 4rem;
+}
