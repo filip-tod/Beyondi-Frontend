@@ -4,6 +4,9 @@ import {Integrations} from "./components/integrations/Integrations.tsx";
 import {PowerOfData} from "./components/powerOfData/PowerOfData.tsx";
 import {Features} from "./components/features/Features.tsx";
 import {Pricing} from "./components/pricing/Pricing.tsx";
+import {Faq} from "./components/faq/Faq.tsx";
+import {StartTrial} from "./components/startTrial/StartTrial.tsx";
+import {Footer} from "../../components/footer/Footer.tsx";
 
 export const LandingPage = () => {
   return(
@@ -14,6 +17,9 @@ export const LandingPage = () => {
       <PowerOfData/>
       <Features/>
       <Pricing/>
+      <Faq/>
+      <StartTrial/>
+      <Footer/>
     </>
   );
 }

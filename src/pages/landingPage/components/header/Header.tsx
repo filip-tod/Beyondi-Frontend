@@ -9,7 +9,7 @@ export const Header = () => {
     <>
    <div
      style={{ background: 'var(--gradient-primary)' }}
-     className={'w-screen flex flex-col items-center justify-center py-20 px-4'}
+     className={'w-full flex flex-col items-center justify-center py-20 px-4'}
    >
   <h1 className={styles.heading}>Grow your users.</h1>
      <h2 className={styles.headingTwo}>Smarter.</h2>
