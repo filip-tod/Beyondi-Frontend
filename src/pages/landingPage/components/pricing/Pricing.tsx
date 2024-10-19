@@ -4,14 +4,16 @@ import {Divider} from "../../../../components/divider/Divider.tsx";
 const subPlan = [
   {
     perMonth: "per month",
-    price: "$10",
+    dolar:"$",
+    price: "10",
     plan: "Basic Plan",
     planExp: "Our most popular plan for small teams.",
     everything: "Everything in our free plan plus....",
   },
   {
     perMonth: "per month",
-    price: "$20",
+    dolar:"$",
+    price: "20",
     plan: "Pro Plan",
     planExp: "For growing teams with advanced needs.",
     everything: "Our most popular plan for small teams.",
@@ -59,7 +61,7 @@ export const Pricing = () => {
           <p className={'text-primary-700 font-semibold'}>Pricing</p>
         </div>
 
-        <h2 className={'text-gray-900 text-4xl text-center'}>
+        <h2 className={'text-gray-900 text-4xl text-center md:font-semibold'}>
           Plans that fit your scale
         </h2>
         <p className={'text-gray-500 text-center font-normal text-lg'}>
@@ -68,33 +70,40 @@ export const Pricing = () => {
         </p>
       </div>
 
+      <div className={'flex flex-col md:flex-row  md:items-center md:justify-center md:gap-5'}>
       {subPlan.map((plan, index) => (
         <div key={index}>
           <div className={'border-gray-200 border-t border-l border-r rounded-t-3xl px-6 py-8 w-full'}>
-            <div className={'flex gap-1 mb-5 items-end'}>
-              <h2 className={'text-gray-900 font-semibold text-5xl'}>{plan.price}</h2>
-              <p className={'text-base text-gray-500 font-medium text-base'}>{plan.perMonth}</p>
+            <div className={'md:flex-row-reverse md:flex md:gap-20 '}>
+              <div className={'flex gap-1 mb-5 items-end '}>
+                <h2 className={'text-gray-900 font-semibold text-5xl md:text-2xl md:h-full md:align-top'}>
+                  {plan.dolar}
+                </h2>
+                <h2 className={'text-gray-900 font-semibold text-5xl'}>{plan.price}</h2>
+                <p className={'text-base text-gray-500 font-medium text-base'}>{plan.perMonth}</p>
+              </div>
+
+              <div className={'flex flex-col gap-1'}>
+                <h3 className={'text-gray-900 text-xl font-semibold'}>{plan.plan}</h3>
+                <p className={'text-gray-500 text-base font-normal'}>{plan.planExp}</p>
+              </div>
             </div>
 
-            <div className={'flex flex-col gap-1'}>
-              <h3 className={'text-gray-900 text-xl font-semibold'}>{plan.plan}</h3>
-              <p className={'text-gray-500 text-base font-normal'}>{plan.planExp}</p>
-            </div>
           </div>
           <div className={'border-gray-200 border p-4 w-full flex flex-col gap-1 py-10'}>
-              <h3 className={'text-gray-900 font-semibold text-base'}>Features</h3>
-              <p className={'font-normal text-base text-gray-500'}>{plan.everything}</p>
-            <ul
-              className="flex flex-col gap-4 mt-5">
+            <h3 className={'text-gray-900 font-semibold text-base'}>Features</h3>
+            <p className={'font-normal text-base text-gray-500'}>{plan.everything}</p>
+            <ul className="flex flex-col gap-4 mt-5 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-4">
               {features[index].features.map((feature, i) => (
                 <li
                   key={i}
-                  className="flex items-center gap-4">
+                  className="flex items-center gap-4 text-gray-500 font-normal">
                   <img src={Check} alt="Check"/>
                   {feature}
                 </li>
               ))}
             </ul>
+
           </div>
           <div className={'border-gray-200 border-l border-r border-b mb-14 p-6 rounded-b-3xl shadow-lg'}>
             <button
@@ -105,6 +114,7 @@ export const Pricing = () => {
           </div>
         </div>
       ))}
+      </div>
     </div>
 
     </>

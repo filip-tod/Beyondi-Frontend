@@ -30,10 +30,11 @@ const footerLinks = [
 
 export const Footer = () => {
   return (
-    <footer>
+    <footer className={'md:px-20'}>
+      <div className={'md:flex md:flex-row-reverse'}>
       <div className={'px-4 flex flex-col gap-4'}>
         <h2 className={'text-sm font-semibold text-gray-900'}>Get The app</h2>
-        <div className={'flex gap-4'}>
+        <div className={'flex gap-4 md:flex-col'}>
           <div>
             <img src={Apple} alt={'apple store'}/>
           </div>
@@ -43,7 +44,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 px-4 py-10">
+      <div className="grid md:w-full grid-cols-2 md:grid-cols-5 gap-8 px-4 py-10">
         {footerLinks.map((section, index) => (
           <div key={index}>
             <h3 className="font-semibold text-gray-900 mb-4 text-sm">{section.title}</h3>
@@ -62,9 +63,11 @@ export const Footer = () => {
           </div>
         ))}
       </div>
-
-      <Divider/>
-
+      </div>
+<div >
+  <Divider/>
+</div>
+<div className={'md:flex md:justify-between md:items-center '}>
       <div className={'px-4 py-8 flex items-center gap-2'}>
 
         <img
@@ -72,9 +75,10 @@ export const Footer = () => {
         />
         <p className={'text-gray-900 font-bold text-lg'}>Untitled UI</p>
       </div>
-      <div className={'px-4 pb-10'}>
+      <div className={'px-4 md:py-8 pb-10'}>
         <p className={'text-gray-400 text-base font-normal'}>© 2077 Untitled UI. All rights reserved.</p>
       </div>
+</div>
     </footer>
   );
 }
