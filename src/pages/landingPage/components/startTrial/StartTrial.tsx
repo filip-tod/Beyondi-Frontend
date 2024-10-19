@@ -10,8 +10,8 @@ export const StartTrial = () => {
       </div>
 
 
-      <div className={' flex flex-col gap-4 w-full px-4'}>
-        <button>
+      <div className={' flex flex-col gap-4 w-full px-4 md:flex-row-reverse md:max-w-md'}>
+        <button className={'md:font-medium md:text-base'}>
           Get started
         </button>
 

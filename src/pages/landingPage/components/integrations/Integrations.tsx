@@ -41,33 +41,35 @@ const integrations = [
 
 export const Integrations = () => {
   return (
-    <div className={'flex flex-col px-6 py-6 gap-10 mb-10'}>
+    <div className={'flex flex-col  px-6 py-6 gap-10 mb-10'}>
 
       <div className={'flex flex-col justify-center items-center gap-5'}>
         <div className={'p-2 rounded-2xl bg-primary-50'}>
           <p className={'text-primary-700 font-medium'}>Integrations</p>
         </div>
         <h2 className={'font-semibold text-4xl text-center'}>Get more value from your tools</h2>
-        <p className={'text-gray-500 text-center text-lg'}>
+        <p className={'text-gray-500 text-center text-lg md:max-w-3xl'}>
           Connect your tools, connect your teams. With over 100 apps already available in our directory,
           your team’s favourite tools are just a click away.
         </p>
       </div>
 
       {/* Dinamičko generiranje integracija */}
-      {integrations.map((integration, index) => (
-        <div key={index} className={'flex flex-col justify-center items-center gap-2'}>
-          <div className={'p-2 rounded-2xl bg-primary-50'}>
-            <img src={integration.image} alt={'Providers'}/>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {integrations.map((integration, index) => (
+          <div key={index} className="flex flex-col justify-center items-center gap-2 p-4">
+            <div className="p-2 rounded-2xl bg-primary-50">
+              <img src={integration.image} alt="Providers"/>
+            </div>
+            <h2 className="font-bold text-lg text-center">{integration.title}</h2>
+            <p className="text-gray-500 text-center text-lg max-w-80">{integration.description}</p>
+            <div className="flex gap-2">
+              <p className="text-primary-700 font-medium ">View integration</p>
+              <img src={ArrowRight} alt="Arrow"/>
+            </div>
           </div>
-          <h2 className={'font-bold text-lg text-center'}>{integration.title}</h2>
-          <p className={'text-gray-500 text-center text-lg'}>{integration.description}</p>
-          <div className={'flex gap-2'}>
-            <p className={'text-primary-700 font-medium'}>View integration</p>
-            <img src={ArrowRight} />
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
