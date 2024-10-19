@@ -43,11 +43,11 @@ export const Accordion = () => {
   };
 
   return (
-    <div className="w-full max-w-md mx-auto space-y-4">
+    <div className="w-full max-w-7xl mx-auto md:p-20 space-y-4">
       {accordionData.map((item, index) => (
         <div
           key={index}
-          className="border-b border-gray-200 pb-4"
+          className="border-b border-gray-200 pb-4 "
         >
           {/* Button za pitanje */}
           <button

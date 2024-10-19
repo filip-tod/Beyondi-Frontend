@@ -26,7 +26,7 @@ const array = [
 
 export const NavDescModal = () => {
   return (
-    <div className={'absolute bg-white  z-10 border border-b-gray-200 shadow-lg rounded-lg left-9 top-20'}>
+    <div className={'absolute bg-white  z-10 border border-b-gray-200 shadow-lg rounded-lg left-20 top-20'}>
       <div className={'flex'}>
         <div className={'flex flex-col gap-6 border-l justify-center  border-b-gray-200 p-6 max-w-sm'}>
           {array.map((item) => (

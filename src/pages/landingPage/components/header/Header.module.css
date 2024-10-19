@@ -5,6 +5,8 @@
     font-weight: 600;
 }
 
+
+
 .headingTwo{
     font-size: 36px;
     line-height: 44px;
@@ -53,5 +55,23 @@
 @media screen and (min-width: 960px) {
     .ChartImage{
      display: none;
+    }
+
+    .heading{
+        font-size: 72px;
+        line-height: 90px;
+
+    }
+
+    .headingTwo{
+        font-size: 72px;
+        line-height: 90px;
+
+    }
+
+    .headingP{
+        font-size: 20px;
+        line-height: 30px;
+
     }
 }

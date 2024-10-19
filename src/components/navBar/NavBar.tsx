@@ -15,7 +15,7 @@ export const NavBar: React.FC = () => {
 
   return (
     <>
-      <nav className="flex justify-between w-full md:w-screen p-4 md:px-10 items-center md:mx-auto">
+      <nav className="flex justify-between w-full md:w-screen md:px-20 p-4 md:px-10 items-center md:mx-auto">
         {/* Logo i naziv */}
         <div className="flex items-center gap-2 font-bold">
           <div>

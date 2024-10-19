@@ -5,7 +5,7 @@ import {ChartComponent} from "../../../../components/Chart/ChartComponent.tsx";
 
 export const Header = () => {
   return(
-    <div className={'md:px-12 '}>
+    <div className={'md:px-20 '}>
    <div
      style={{ background: 'var(--gradient-primary)' }}
       className={'md:rounded-3xl '}
