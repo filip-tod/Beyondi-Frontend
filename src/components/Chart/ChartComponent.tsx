@@ -3,7 +3,7 @@ import ChartPie from '../../assets/heading/chart.png';
 
 export const ChartComponent = () => {
   return (
-    <div className="relative md:bottom-20 bottom-10  items-center justify-center">
+    <div className="relative md:bottom-20 bottom-10  items-center justify-center z-10">
       {/* Card Image */}
       <img src={Card} className="w-full h-auto" alt="Card" />
 
