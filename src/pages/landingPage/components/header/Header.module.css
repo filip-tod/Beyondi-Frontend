@@ -50,3 +50,8 @@
     z-index: 0;
 
 }
+@media screen and (min-width: 960px) {
+    .ChartImage{
+     display: none;
+    }
+}

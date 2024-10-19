@@ -1,8 +1,7 @@
 import styles from './Header.module.css';
-import Chart from '../../../../assets/heading/ChartGraphMock.png';
 import LinesRight from '../../../../assets/heading/LinePatternRight.png';
 import LinesLeft from '../../../../assets/heading/LinePatternLeft.png';
-
+import {ChartComponent} from "../../../../components/Chart/ChartComponent.tsx";
 
 export const Header = () => {
   return(
@@ -34,13 +33,14 @@ export const Header = () => {
    </div>
 
 
-      <div className={'h-80'}>
-        <div className={'w-full flex items-center justify-center py-16 px-4'}>
-          <img
-            className={styles.ChartImage}
-            src={Chart}
-          />
+      <div className={''}>
+        <div className={'w-full flex items-center justify-center '}>
+
+
+          <ChartComponent/>
         </div>
+
+
         <img
           className={styles.LinesRight}
           src={LinesRight}
