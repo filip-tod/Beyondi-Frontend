@@ -73,8 +73,8 @@ export const Features = () => {
             </h2>
             <p className={'text-gray-500 text-center font-normal text-base md:max-w-md'}>{item.paragraph}</p>
 
-            <div className={'flex gap-2'}>
-              <p className={'text-primary-700 font-normal text-base'}>Learn More</p>
+            <div className={'flex cursor-pointer gap-2'}>
+              <p className={'text-primary-700 font-normal hover:text-primary-900 text-base'}>Learn More</p>
               <img
               src={ArrowRight}
               alt={'arrow right'}

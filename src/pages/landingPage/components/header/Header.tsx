@@ -24,7 +24,7 @@ export const Header = () => {
            <input
              type='text'
              placeholder={'Enter your email'}
-             className={'md:w-96'}
+             className={'md:w-96 text-gray-500 font-base'}
            />
            <div className={'w-full mb-2 mt-2 md:hidden'}>
              <p className={styles.privacyP}>
@@ -40,7 +40,7 @@ export const Header = () => {
          </div>
          <div className={'w-full mt-5  mb-2 hidden md:flex'}>
            <p className={styles.privacyP}>
-             We care about your data in our <a>privacy policy.</a>
+             We care about your data in our <a className={'cursor-pointer hover:text-primary-400'}>privacy policy.</a>
            </p>
          </div>
        </div>

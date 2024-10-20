@@ -20,6 +20,7 @@ export const LandingPage = () => {
       <Faq/>
       <TrustedCompany/>
       <StartTrial/>
+      <footer/>
     </>
   );
 }
