@@ -38,7 +38,6 @@ export const NavDescModal = () => {
                 <h2 className={'text-gray-900 font-semibold text-base'}>{item.title}</h2>
                 <p className={'text-gray-500 text-sm font-medium'}>{item.paragraph}</p>
               </div>
-
             </div>
           ))}
 

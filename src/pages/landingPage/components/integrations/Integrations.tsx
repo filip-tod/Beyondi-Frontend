@@ -63,8 +63,8 @@ export const Integrations = () => {
             </div>
             <h2 className="font-bold text-lg text-center">{integration.title}</h2>
             <p className="text-gray-500 text-center text-lg max-w-80">{integration.description}</p>
-            <div className="flex gap-2">
-              <p className="text-primary-700 font-medium ">View integration</p>
+            <div className="flex  cursor-pointer gap-2">
+              <p className="text-primary-700 hover:text-primary-900 font-medium ">View integration</p>
               <img src={ArrowRight} alt="Arrow"/>
             </div>
           </div>

@@ -1,7 +1,10 @@
 import React, { useEffect } from 'react';
 import { ModalProps } from '../../interfaces/ModalProps.ts';
+import {useNavigate} from "react-router-dom";
 
 export const NavModal: React.FC<ModalProps> = ({ isOpen }) => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('overflow-hidden');
@@ -26,7 +29,7 @@ export const NavModal: React.FC<ModalProps> = ({ isOpen }) => {
         <div className="bg-white w-full p-4">
           <ul className="space-y-4">
             <li>
-              <a href="#" className="text-gray-900 text-base font-semibold no-underline">Home</a>
+              <a onClick={()=>navigate('/landing')}  className="text-gray-900 text-base font-semibold no-underline">Home</a>
             </li>
 
             <div className="flex flex-col gap-6 font-semibold">
