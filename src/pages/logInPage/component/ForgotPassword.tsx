@@ -8,19 +8,21 @@ import {resetPassword} from "../../../services/firebaseFunctions.ts";
 export const ForgotPassword = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
-  const [error, setError] = useState<string | null>(null); // Za prikaz greške
-  const [loading, setLoading] = useState(false); // Za loader
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
   const handleResetPassword = async () => {
     setError(null);
     setLoading(true);
     try {
       await resetPassword(email);
-      navigate('/check-email'); // Preusmjeravanje nakon uspješnog slanja
+      navigate('/check-email');
     } catch (error) {
+      console.log(error);
       setError('Failed to send password reset email. Please try again.'); // Prikaz greške
     } finally {
       setLoading(false);
+
     }
   };
 

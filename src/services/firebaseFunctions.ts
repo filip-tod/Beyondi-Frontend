@@ -1,15 +1,31 @@
-// firebaseFunctions.ts
-
-import { createUserWithEmailAndPassword,
+import {
+  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  User,
+  UserCredential
 } from "firebase/auth";
-import {useUserStore} from "../store/useUserStore.ts";
-import {auth, googleProvider} from "./Firebase.ts";
+import { auth, googleProvider } from "./Firebase";
+import { create } from "zustand";
 
-// Funkcija za resetiranje lozinke
-export const resetPassword = async (email: string) => {
+interface UserStoreState {
+  user: User | null;  // Firebase User tip ili null
+  loading: boolean;
+  setUser: (user: User | null) => void;
+  clearUser: () => void;
+  setLoading: (loading: boolean) => void;
+}
+
+export const useUserStore = create<UserStoreState>((set) => ({
+  user: null,
+  loading: false,
+  setUser: (user: User | null) => set({ user }),
+  clearUser: () => set({ user: null }),
+  setLoading: (loading: boolean) => set({ loading }),
+}));
+
+export const resetPassword = async (email: string): Promise<void> => {
   try {
     await sendPasswordResetEmail(auth, email);
     console.log("Email za resetiranje lozinke poslan.");
@@ -19,51 +35,59 @@ export const resetPassword = async (email: string) => {
   }
 };
 
-// Funkcija za registraciju korisnika
-export const registerWithEmailAndPassword = async (name: string, email: string, password: string) => {
+export const registerWithEmailAndPassword = async (
+  name: string,
+  email: string,
+  password: string
+): Promise<void> => {
   try {
-    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
-    useUserStore.getState().setUser(user); // Postavljanje korisnika u Zustand store
+    const userCredential: UserCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user: User = userCredential.user;
+    useUserStore.getState().setUser(user);
     console.log("Korisnik kreiran:", user);
   } catch (error) {
     console.error("Greška pri registraciji:", error);
+    throw error;
   }
 };
 
-// Funkcija za prijavu korisnika
-export const logInWithEmailAndPassword = async (email: string, password: string) => {
+export const logInWithEmailAndPassword = async (
+  email: string,
+  password: string,
+  navigate: any
+): Promise<void> => {
   try {
-    const userCredential = await signInWithEmailAndPassword(auth, email, password);
-    const user = userCredential.user;
-    useUserStore.getState().setUser(user); // Postavljanje korisnika u Zustand store
+    const userCredential: UserCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user: User = userCredential.user;
+    useUserStore.getState().setUser(user);
     console.log("Korisnik prijavljen:", user);
+    navigate('/landing');
   } catch (error) {
     console.error("Greška pri prijavi:", error);
+    throw error;
   }
 };
 
-// Funkcija za prijavu putem Google-a
-export const signInWithGoogle = async () => {
+export const signInWithGoogle = async (): Promise<void> => {
   try {
     const result = await signInWithPopup(auth, googleProvider);
-    const user = result.user;
-    useUserStore.getState().setUser(user); // Postavljanje korisnika u Zustand store
+    const user: User = result.user;
+    useUserStore.getState().setUser(user);
     console.log("Prijavljen preko Google-a:", user);
+
   } catch (error) {
     console.error("Greška pri prijavi s Google-om:", error);
+    throw error;
   }
 };
 
-// Funkcija za odjavu korisnika
-export const logOut = async () => {
+export const logOut = async (): Promise<void> => {
   try {
     await auth.signOut();
-    useUserStore.getState().clearUser(); // Očisti korisnika iz Zustand store-a
+    useUserStore.getState().clearUser();
     console.log("Korisnik odjavljen");
   } catch (error) {
     console.error("Greška pri odjavi:", error);
+    throw error;
   }
 };
-
-

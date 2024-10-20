@@ -10,14 +10,14 @@ import { useNavigate } from 'react-router-dom';
 export const SignUpPage = () => {
   const navigate = useNavigate();
 
-  // Validacijska shema za Formik pomoću Yup-a
+
   const validationSchema = Yup.object({
     name: Yup.string().required('Name is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
     password: Yup.string().min(8, 'Password must be at least 8 characters').required('Password is required'),
   });
 
-  // Inicijalizacija Formik-a
+
   const formik = useFormik({
     initialValues: {
       name: '',
@@ -27,9 +27,9 @@ export const SignUpPage = () => {
     validationSchema,
     onSubmit: async (values) => {
       try {
-        // Poziv funkcije za registraciju
+
         await registerWithEmailAndPassword(values.name, values.email, values.password);
-        navigate('/landing'); // Nakon uspješne registracije, preusmjeri na landing page
+        navigate('/verify-email');
       } catch (error) {
         console.error('Error during registration:', error);
       }
@@ -43,10 +43,10 @@ export const SignUpPage = () => {
           <div></div>
           <div className={'flex flex-col w-screen md:w-full px-4 md:px-20'}>
             <div className={'flex flex-col gap-2 pb-10 pt-5'}>
-              <div>
+              <div className={'md:hidden'}>
                 <img src={Icon} />
               </div>
-              <h1 className={'font-semibold text-2xl text-gray-900'}>Sign up</h1>
+              <h1 className={'font-semibold  md:text-4xl text-2xl text-gray-900'}>Sign up</h1>
               <p className={'text-gray-500 font-normal text-base'}>Start your 30-day free trial.</p>
             </div>
 

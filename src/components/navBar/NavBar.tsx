@@ -3,6 +3,7 @@ import Logo from '../../assets/icons/LogomarkMutna.svg';
 import BurgerIcon from '../../assets/icons/Burger.svg';
 import Xicon from '../../assets/icons/x.svg';
 import Down from '../../assets/icons/chevron-down.svg';
+import Up from '../../assets/icons/chevron-up.svg';
 import { NavModal } from './NavModal.tsx';
 import { NavDescModal } from './NavDescModal.tsx';
 import {useUserStore} from "../../store/useUserStore.ts";
@@ -29,7 +30,7 @@ export const NavBar: React.FC = () => {
   };
   return (
     <>
-      <nav className="flex justify-between w-full md:w-screen md:px-20 p-4 md:px-10 items-center md:mx-auto">
+      <nav className="flex justify-between w-full md:w-screen md:px-20 p-4 items-center md:mx-auto">
         {/* Logo i naziv */}
         <div className="flex items-center gap-2 font-bold">
           <div
@@ -43,19 +44,22 @@ export const NavBar: React.FC = () => {
 
           {/* Opcije za desktop */}
           <div className="ml-5 md:flex items-center gap-6  hidden">
-            <span className="text-gray-500 hover:text-primary-900 font-bold cursor-pointer text-base">Home</span>
+            <span onClick={()=>navigate('/landing')} className="text-gray-500 hover:text-primary-900 font-bold cursor-pointer text-base">Home</span>
             <div
-              onClick={toggleDesktopModal} // Togglanje modala na klik
+              onClick={toggleDesktopModal}
               className="flex gap-1 items-center cursor-pointer"
             >
               <span className="text-gray-500 cursor-pointer hover:text-primary-900 font-bold text-base">Resources</span>
-              <img src={Down} alt="Chevron down"/>
+              { !isDesktopModalOpen ? (
+                <img src={Down} alt="Chevron down" />
+              ) : (
+                <img src={Up} alt="Chevron up" />
+              )}
             </div>
             <span className="text-gray-500 cursor-pointer  hover:text-primary-900 text-base font-bold">Pricing</span>
           </div>
         </div>
 
-        {/* Uslovna ikona za mobilni prikaz */}
         <div className="p-2 md:hidden z-20">
           <img
             src={isMobileModalOpen ? Xicon : BurgerIcon}
