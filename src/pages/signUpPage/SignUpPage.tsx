@@ -28,7 +28,7 @@ export const SignUpPage = () => {
     onSubmit: async (values) => {
       try {
 
-        await registerWithEmailAndPassword(values.name, values.email, values.password);
+        await registerWithEmailAndPassword(values.email, values.password);
         navigate('/verify-email');
       } catch (error) {
         console.error('Error during registration:', error);
