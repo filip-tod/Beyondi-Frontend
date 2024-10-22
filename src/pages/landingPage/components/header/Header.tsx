@@ -1,6 +1,7 @@
 import styles from './Header.module.css';
 import LinesRight from '../../../../assets/heading/LinePatternRight.png';
 import LinesLeft from '../../../../assets/heading/LinePatternLeft.png';
+import DescLine from '../../../../assets/heading/linePatterDesc.png'
 import {ChartComponent} from "../../../../components/Chart/ChartComponent.tsx";
 
 export const Header = () => {
@@ -66,6 +67,21 @@ export const Header = () => {
           className={styles.LinesLeft}
           src={LinesLeft}
         />
+
+
+        <div>
+          <img
+            src={DescLine}
+            className="hidden md:block md:absolute md:right-0 bottom-44 md:w-auto md:h-auto right-56"
+          />
+
+          <img
+            src={DescLine}
+            className="hidden md:block md:absolute md:right-0 top-72 md:w-auto md:h-auto left-20"
+          />
+        </div>
+
+
       </div>
     </div>
   );

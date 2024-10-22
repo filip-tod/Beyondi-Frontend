@@ -8,9 +8,10 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider } from "./Firebase";
 import { create } from "zustand";
+import {NavigateFunction} from "react-router-dom";
 
 interface UserStoreState {
-  user: User | null;  // Firebase User tip ili null
+  user: User | null;
   loading: boolean;
   setUser: (user: User | null) => void;
   clearUser: () => void;
@@ -36,7 +37,6 @@ export const resetPassword = async (email: string): Promise<void> => {
 };
 
 export const registerWithEmailAndPassword = async (
-  name: string,
   email: string,
   password: string
 ): Promise<void> => {
@@ -54,7 +54,7 @@ export const registerWithEmailAndPassword = async (
 export const logInWithEmailAndPassword = async (
   email: string,
   password: string,
-  navigate: any
+  navigate: NavigateFunction
 ): Promise<void> => {
   try {
     const userCredential: UserCredential = await signInWithEmailAndPassword(auth, email, password);

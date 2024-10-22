@@ -74,4 +74,12 @@
         line-height: 30px;
 
     }
+
+    .LinesLeft{
+    display: none;
+    }
+
+    .LinesRight{
+     display: none;
+    }
 }

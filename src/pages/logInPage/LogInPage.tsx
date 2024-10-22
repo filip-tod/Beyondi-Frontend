@@ -74,7 +74,7 @@ export const LogInPage: React.FC = () => {
                 className={'border rounded-t-lg'}
                 type="password"
                 name="password"
-                placeholder={'*******'}
+                placeholder={'* * * * * * *'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 id="password"
